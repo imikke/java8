@@ -17,9 +17,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-/*
- * デジタルクロックの設定を行うクラス。
- * 別スレッドで動作する。
+/**
+ * デジタルクロックの設定を行うクラス。 別スレッドで動作する。
  * 
  */
 

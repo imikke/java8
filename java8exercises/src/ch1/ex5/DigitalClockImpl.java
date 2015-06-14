@@ -9,16 +9,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-/*
- * GUI課題2-4
+/**
+ * GUI課題2-4 デジタル時計をSwingで作成する。
  * 
- * デジタル時計をSwingで作成する。
- * 
- */
-
-/*
- * DigitalClockクラス
- * フレームとなるクラス。様々なコンポーネントを追加できる。
+ * DigitalClockクラス フレームとなるクラス。様々なコンポーネントを追加できる。
  * 
  */
 

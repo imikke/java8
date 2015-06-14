@@ -8,9 +8,6 @@ import javax.swing.JMenuItem;
 
 public class DrawMenuBar extends JMenuBar {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	private DrawPanel dp;
