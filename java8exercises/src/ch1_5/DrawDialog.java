@@ -4,8 +4,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.WindowAdapter;
@@ -23,13 +21,9 @@ import javax.swing.JPanel;
  * デジタルクロックの設定を行うクラス。
  * 別スレッドで動作する。
  * 
- *
  */
 
 public class DrawDialog extends JFrame implements Runnable {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private static Thread th = null;
 	private DrawPanel dp;
@@ -188,23 +182,18 @@ public class DrawDialog extends JFrame implements Runnable {
 		init();
 
 		// OKボタンが押されたら
-		ok_button.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				init_font = family_box.getSelectedIndex();
-				init_style = style_box.getSelectedIndex();
-				init_size_idx = size_box.getSelectedIndex();
-				init_color_idx = color_box.getSelectedIndex();
-				init_bg_color_idx = bgColor_box.getSelectedIndex();
-				dispose();
-			}
+		ok_button.addActionListener(event -> {
+			init_font = family_box.getSelectedIndex();
+			init_style = style_box.getSelectedIndex();
+			init_size_idx = size_box.getSelectedIndex();
+			init_color_idx = color_box.getSelectedIndex();
+			init_bg_color_idx = bgColor_box.getSelectedIndex();
+			dispose();
 		});
 
 		// Cancelボタンが押されたら
-		cancel_button.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// boxの選択を前の状態に戻す
+		cancel_button.addActionListener(event -> {
+			// boxの選択を前の状態に戻す
 				family_box.setSelectedIndex(init_font);
 				style_box.setSelectedIndex(init_style);
 				size_box.setSelectedIndex(init_size_idx);
@@ -217,8 +206,7 @@ public class DrawDialog extends JFrame implements Runnable {
 				setFontSytle(init_style);
 				setFontSize(Integer.parseInt(sizes[init_size_idx]));
 				dispose();
-			}
-		});
+			});
 
 		family_box.addItemListener(listener);
 		style_box.addItemListener(listener);
@@ -340,8 +328,6 @@ public class DrawDialog extends JFrame implements Runnable {
 	 * 
 	 * JListで選択された際に呼ばれるListener
 	 * 
-	 * @author Isamu
-	 *
 	 */
 	public class Listener implements ItemListener {
 		// 同期を取る

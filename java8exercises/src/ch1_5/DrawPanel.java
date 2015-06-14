@@ -17,9 +17,6 @@ import javax.swing.JPanel;
  * デジタル時計を表示する。 イベントを受け取ると、文字列を書き換える。
  * 
  * 気になる点：フォントの色を変えたときに一度に変わらないところ。
- * 
- * @author Isamu
- *
  */
 
 public class DrawPanel extends JPanel implements ActionListener {

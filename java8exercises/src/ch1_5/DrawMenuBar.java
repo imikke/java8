@@ -1,8 +1,6 @@
 package ch1_5;
 
 import java.awt.GraphicsEnvironment;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -58,13 +56,7 @@ public class DrawMenuBar extends JMenuBar {
 	private void createMenuItemClose(JMenu menu) {
 		JMenuItem menuitem1 = new JMenuItem("Close");
 		menu.add(menuitem1);
-		menuitem1.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent event) {
-				actFileClose();
-			}
-		});
-
+		menuitem1.addActionListener(event -> actFileClose());
 	}
 
 	/*
@@ -78,14 +70,11 @@ public class DrawMenuBar extends JMenuBar {
 		JMenuItem[] fontItem = new JMenuItem[fontNames.length];
 		for (int i = 0; i < fontNames.length; i++) {
 			menu.add(fontItem[i] = new JMenuItem(fontNames[i]));
-			fontItem[i].addActionListener(new ActionListener() {
-				// メニューボタンが呼ばれたら
-				@Override
-				public void actionPerformed(ActionEvent event) {
-					JMenuItem item = (JMenuItem) event.getSource();
-					System.out.println(item.getText());
-					dp.setFontName(item.getText());
-				}
+			// メニューボタンが呼ばれたら
+			fontItem[i].addActionListener(event -> {
+				JMenuItem item = (JMenuItem) event.getSource();
+				System.out.println(item.getText());
+				dp.setFontName(item.getText());
 			});
 		}
 	}
@@ -98,12 +87,9 @@ public class DrawMenuBar extends JMenuBar {
 		JMenuItem[] fontSizeItem = new JMenuItem[fontSizeNames.length];
 		for (int i = 0; i < fontSizeNames.length; i++) {
 			menu.add(fontSizeItem[i] = new JMenuItem(fontSizeNames[i]));
-			fontSizeItem[i].addActionListener(new ActionListener() {
-				@Override
-				public void actionPerformed(ActionEvent event) {
-					JMenuItem item = (JMenuItem) event.getSource();
-					dp.setFontSize(Integer.valueOf(item.getText()).intValue());
-				}
+			fontSizeItem[i].addActionListener(event -> {
+				JMenuItem item = (JMenuItem) event.getSource();
+				dp.setFontSize(Integer.valueOf(item.getText()).intValue());
 			});
 		}
 	}
@@ -119,12 +105,9 @@ public class DrawMenuBar extends JMenuBar {
 		for (int i = 0; i < fontColorNames.length; i++) {
 			menu.add(fontColorItem[i] = new JMenuItem(fontColorNames[i]));
 			fontColorItem[i].setBackground(dp.stringToColor(fontColorNames[i]));
-			fontColorItem[i].addActionListener(new ActionListener() {
-				@Override
-				public void actionPerformed(ActionEvent event) {
-					JMenuItem item = (JMenuItem) event.getSource();
-					dp.setFontColor(dp.stringToColor(item.getText()));
-				}
+			fontColorItem[i].addActionListener(event -> {
+				JMenuItem item = (JMenuItem) event.getSource();
+				dp.setFontColor(dp.stringToColor(item.getText()));
 			});
 		}
 
@@ -140,12 +123,9 @@ public class DrawMenuBar extends JMenuBar {
 					BackGroundColorNames[i]));
 			BackGroundColorItem[i].setBackground(dp
 					.stringToColor(BackGroundColorNames[i]));
-			BackGroundColorItem[i].addActionListener(new ActionListener() {
-				@Override
-				public void actionPerformed(ActionEvent event) {
-					JMenuItem item = (JMenuItem) event.getSource();
-					dp.setBgColor(dp.stringToColor(item.getText()));
-				}
+			BackGroundColorItem[i].addActionListener(event -> {
+				JMenuItem item = (JMenuItem) event.getSource();
+				dp.setBgColor(dp.stringToColor(item.getText()));
 			});
 		}
 	}

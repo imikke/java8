@@ -10,10 +10,6 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 /*
- * ch1_5をラムダ式を使わない場合の行数：674
- */
-
-/*
  * GUI課題2-4
  * 
  * デジタル時計をSwingで作成する。
