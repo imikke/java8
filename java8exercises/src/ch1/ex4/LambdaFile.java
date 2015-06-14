@@ -1,4 +1,4 @@
-package ch1_4;
+package ch1.ex4;
 
 import java.io.File;
 import java.util.ArrayList;

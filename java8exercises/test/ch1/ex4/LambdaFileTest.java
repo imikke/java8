@@ -1,4 +1,4 @@
-package ch1_2;
+package ch1.ex4;
 
 import static org.junit.Assert.assertArrayEquals;
 
@@ -12,12 +12,15 @@ public class LambdaFileTest {
 	public void test() {
 		File dir = new File("test/data");
 		LambdaFile lf = new LambdaFile();
-		String[] expecteds = { "test/data/abc1", "test/data/sub2" };
-		File[] actuals = lf.directories(dir);
+		String[] expecteds = { "test/data/abc1", "test/data/sub2",
+				"test/data/abc.c", "test/data/abc.java", "test/data/xyz.java" };
+		File[] originalList = dir.listFiles();
+		File[] actuals = lf.sortFileName(originalList);
 		String[] actStrs = new String[actuals.length];
 		for (int i = 0; i < actuals.length; i++) {
 			actStrs[i] = actuals[i].toString();
 		}
+
 		assertArrayEquals(expecteds, actStrs);
 
 	}

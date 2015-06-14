@@ -1,4 +1,4 @@
-package ch1_3;
+package ch1.ex3;
 
 import java.io.File;
 

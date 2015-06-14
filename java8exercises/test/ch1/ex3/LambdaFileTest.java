@@ -1,4 +1,4 @@
-package ch1_3;
+package ch1.ex3;
 
 import static org.junit.Assert.assertArrayEquals;
 

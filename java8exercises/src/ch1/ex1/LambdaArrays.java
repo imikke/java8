@@ -1,4 +1,4 @@
-package ch1_1;
+package ch1.ex1;
 
 import java.util.Arrays;
 import java.util.Comparator;

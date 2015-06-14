@@ -1,4 +1,4 @@
-package ch1_5;
+package ch1.ex5;
 
 import javax.swing.Icon;
 

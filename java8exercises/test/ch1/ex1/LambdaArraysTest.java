@@ -1,8 +1,10 @@
-package ch1_1;
+package ch1.ex1;
 
 import static org.junit.Assert.assertArrayEquals;
 
 import org.junit.Test;
+
+import ch1.ex1.LambdaArrays;
 
 public class LambdaArraysTest {
 
