@@ -14,7 +14,7 @@ public class Collection2Test {
 		lists.forEachIf(string -> {
 			// System.out.println(string);
 			// addをスレッドセーフで実行できるかは保証されない（ 1.6 変数スコープ参照）
-				outlists.add(string);
+			outlists.add(string);
 			}, string -> string.equals("Yokohama"));
 		outlists.forEach(System.out::println);
 	}
