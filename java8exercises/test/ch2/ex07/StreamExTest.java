@@ -1,4 +1,4 @@
-package ch2.ex08;
+package ch2.ex07;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -7,7 +7,9 @@ import java.util.stream.Stream;
 
 import org.junit.Test;
 
-public class StreamUtilTest {
+import ch2.ex07.StreamEx;
+
+public class StreamExTest {
 
 	@Test
 	public void test() {
@@ -15,10 +17,10 @@ public class StreamUtilTest {
 				"down", "the", "stream" };
 		// 有限のストリーム
 		Stream<String> song = Stream.of(strings);
-		assertTrue(StreamUtil.isFinite(song));
+		assertTrue(StreamEx.isFinite(song));
 		// 無限のストリーム
 		Stream<Double> randoms = Stream.generate(Math::random);
-		assertFalse(StreamUtil.isFinite(randoms));
+		assertFalse(StreamEx.isFinite(randoms));
 	}
 
 }
