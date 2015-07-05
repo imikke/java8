@@ -13,6 +13,7 @@ public class StreamCalculator {
 			return x + y;
 		});
 		// return sum.get() / count;
+		// 要素数はcount+1
 		return sum.get() / (counter.getCount() + 1);
 	}
 }
