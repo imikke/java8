@@ -18,7 +18,7 @@ public class WordCounter {
 		for (int i = 0; i < shortWordCounters.length; i++) {
 			shortWordCounters[i] = new AtomicInteger();
 		}
-		words.forEach(s -> {
+		words.parallel().forEach(s -> {
 			if (s.length() < len) {
 				// System.out.println(s.length() + ":" + s);
 				shortWordCounters[s.length()].getAndIncrement();

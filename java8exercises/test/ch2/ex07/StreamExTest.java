@@ -7,8 +7,6 @@ import java.util.stream.Stream;
 
 import org.junit.Test;
 
-import ch2.ex07.StreamEx;
-
 public class StreamExTest {
 
 	@Test
