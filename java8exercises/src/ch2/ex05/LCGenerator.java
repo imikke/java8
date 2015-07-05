@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 public class LCGenerator {
 
 	/**
-	 * generateRandoms関数は、Steam<Long>型の乱数の無限ストリームを返す。
+	 * generateRandomsメソッドは、Stream型の乱数の無限ストリームを返す。
 	 * 
 	 * @param seed
 	 * @param a

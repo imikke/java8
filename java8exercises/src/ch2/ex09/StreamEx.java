@@ -6,7 +6,7 @@ import java.util.stream.Stream;
 public class StreamEx {
 
 	/**
-	 * collectStreamメソッドは、ArrayList<T>のストリームを一つのArrayList<T>に集約する。
+	 * collectStreamメソッドは、ArrayListのストリームを一つのArrayListに集約する。
 	 * 
 	 * @param stream
 	 * @return
