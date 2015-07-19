@@ -16,10 +16,11 @@ public class LoggingTest {
 			// INFOはロギングされる
 			Logging.logIf(Level.INFO, () -> i == 10, () -> "a[10] = " + a[10]);
 
-			// 出力結果
-			// INFO is loggable.
-			// 7 19, 2015 11:33:56 午前 ch3.ex01.Logging logIf
-			// 情報: a[10] = 100
+			/*
+			 * INFO is loggable.
+			 * 7 19, 2015 11:33:56 午前 ch3.ex01.Logging logIf
+			 * 情報: a[10] = 100
+			 */
 		}
 	}
 }
