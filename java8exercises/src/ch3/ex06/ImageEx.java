@@ -1,5 +1,6 @@
-package ch3.ex05;
+package ch3.ex06;
 
+import java.util.function.BiFunction;
 import java.util.function.UnaryOperator;
 
 import javafx.application.Application;
@@ -28,38 +29,41 @@ public class ImageEx extends Application {
 		return out;
 	}
 
+	public static UnaryOperator<Color> brighten(double factor) {
+		return c -> c.deriveColor(0, 1, factor, 1);
+	}
+
 	/**
 	 * transformメソッドは、引数fで定義された画像処理を引数inの画像に対して実施する。
 	 * 
 	 * @param in
 	 *            入力画像
 	 * @param f
+	 * @param arg
+	 *            画像処理パラメータ
 	 * @return 出力画像
 	 */
-	public static Image transform(Image in, ColorTransformer f) {
+	public static <T> Image transform(Image in, BiFunction<Color, T, Color> f,
+			T arg) {
 		int width = (int) in.getWidth();
 		int height = (int) in.getHeight();
 		WritableImage out = new WritableImage(width, height);
 		for (int x = 0; x < width; x++)
 			for (int y = 0; y < height; y++)
 				out.getPixelWriter().setColor(x, y,
-						f.apply(x, y, in.getPixelReader().getColor(x, y)));
+						f.apply(in.getPixelReader().getColor(x, y), arg));
 		return out;
 	}
 
 	@Override
 	public void start(Stage stage) {
 		// queen-mary.png does not include in this project.
-		// Please refer to the sample code of this book.
+		// Please refer to the sample codße of this book.
 		Image image = new Image("queen-mary.png");
-		Image brightenedImage = transform(image, Color::brighter);
-		Image image2 = transform(image, (x, y, c) -> {
-			if (x < 10 || (int) image.getWidth() - 10 < x || y < 10
-					|| (int) image.getHeight() - 10 < y) {
-				return Color.GRAY;
-			}
-			return c.brighter();
-		});
+		Image brightenedImage = transform(image, brighten(1.2));
+		Image image2 = transform(image, (c, factor) -> {
+			return c.deriveColor(0, 1, factor, 1);
+		}, 2.0);
 		stage.setScene(new Scene(new HBox(new ImageView(brightenedImage),
 				new ImageView(image2))));
 
