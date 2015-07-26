@@ -16,7 +16,7 @@ interface ColorTransformer {
 	Color apply(int x, int y, Color colorAtXY, int flameLength, Color flameColor);
 
 	/**
-	 * generateCTWithFlameは、枠付きのColorTransformerインスタンスを返す。
+	 * generateCTWithFlameは、画像を明るくして、枠を付けたColorTransformerインスタンスを返す。
 	 * 
 	 * @param image
 	 * @return
@@ -27,7 +27,7 @@ interface ColorTransformer {
 					|| (int) image.getHeight() - fl < y) {
 				return fc;
 			}
-			return c;
+			return c.brighter();
 		};
 	}
 }
@@ -77,9 +77,8 @@ public class ImageEx extends Application {
 		// Please refer to the sample code of this book.
 		Image image = new Image("queen-mary.png");
 		Image brightenedImage = transform(image, Color::brighter);
-		Image image2 = transform(brightenedImage,
-				ColorTransformer.generateCTWithFlame(brightenedImage), 20,
-				Color.BLUE);
+		Image image2 = transform(image,
+				ColorTransformer.generateCTWithFlame(image), 20, Color.BLUE);
 		stage.setScene(new Scene(new HBox(new ImageView(brightenedImage),
 				new ImageView(image2))));
 
