@@ -4,7 +4,10 @@ import java.util.Comparator;
 
 public class ComparatorEx {
 	/**
-	 * 組み合わせは８パターン
+	 * compStrGeneratorメソッドは、引数のオプションに従って、Comparator<String>を返す。
+	 * オプションは、ComapareOptionに従う。
+	 * 
+	 * オプションの組み合わせは８パターン
 	 * 順、大小区別有、空白除外
 	 * 順、大小区別有、空白含む
 	 * 順、大小区別無、空白除外
