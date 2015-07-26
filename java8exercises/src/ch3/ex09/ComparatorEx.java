@@ -10,8 +10,8 @@ public class ComparatorEx {
 	 * 
 	 * @param fieldNames
 	 * @return
-	 * @exception fieldNamesの各フィールド名が存在しない場合は
-	 *                、IllegalArgumentException
+	 * @throw IllegalArgumentException fieldNamesの各フィールド名が存在しない場合
+	 * 
 	 */
 	public static <T> Comparator<T> lexicographicComparator(
 			String... fieldNames) {

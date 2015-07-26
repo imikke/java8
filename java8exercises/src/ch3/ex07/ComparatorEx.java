@@ -16,11 +16,11 @@ public class ComparatorEx {
 	 * 
 	 * @param options
 	 * @return
-	 * @exception 引数が0以下4以上
-	 *                、対となるオプション（普通の順序と逆順など）が組み合わせれている
+	 * @throw IllegalArgumentException
+	 *        引数が0以下4以上、対となるオプション（普通の順序と逆順など）が組み合わせがある場合
 	 */
 	public static Comparator<String> compStrGenerator(
-			ComparatorOption... options) throws Exception {
+			ComparatorOption... options) {
 		Comparator<String> comp = null;
 		comp = (str1, str2) -> {
 			int ret = 0;
