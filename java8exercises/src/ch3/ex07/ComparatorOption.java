@@ -1,0 +1,6 @@
+package ch3.ex07;
+
+public enum ComparatorOption {
+	ORDER, REVERSE_ORDER, CASE_SENSITIVE, CASE_INSENSITIVE, UNIGNORE_SPACE, IGNORE_SPACE
+
+}
