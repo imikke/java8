@@ -34,7 +34,7 @@ interface ColorTransformer {
 	 * @param f
 	 * @return
 	 */
-	public static ColorTransformer toColortTransformer(UnaryOperator<Color> f) {
+	public static ColorTransformer toColorTransformer(UnaryOperator<Color> f) {
 		return (x, y, c) -> f.apply(c);
 	}
 }
@@ -76,11 +76,11 @@ public class ImageEx extends Application {
 		// Please refer to the sample code of this book.
 		Image image = new Image("queen-mary.png");
 		Image brightenedImage = transform(image,
-				ColorTransformer.toColortTransformer(Color::brighter));
+				ColorTransformer.toColorTransformer(Color::brighter));
 
 		// UnaryOperatorをColorTransformerに変換
 		ColorTransformer ct = ColorTransformer
-				.toColortTransformer(Color::brighter);
+				.toColorTransformer(Color::brighter);
 		// ColorTrnsformerオブジェクトを合成
 		Image image2 = transform(
 				image,
