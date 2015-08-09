@@ -5,7 +5,7 @@ import java.util.Comparator;
 public class ComparatorEx {
 	/**
 	 * compStrGeneratorメソッドは、引数のオプションに従って、Comparator<String>を返す。
-	 * オプションは、ComapareOptionに従う。
+	 * オプションは、CompareOptionに従う。
 	 * 
 	 * オプションの組み合わせは８パターン
 	 * 順、大小区別有、空白除外
