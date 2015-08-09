@@ -2,11 +2,10 @@ package ch3.ex20;
 
 import java.util.List;
 import java.util.function.Function;
-import java.util.stream.Stream;
 
-public interface StreamEx<T> extends Stream<T> {
+public interface ListEx<T> {
 	/**
-	 * mapメソッドはList<T>をList<U>に変換する。
+	 * mapメソッドはList<T>の各要素にFunction<T,U> fを適用して、List<U>を作成する。
 	 * 
 	 * @param list
 	 * @param f

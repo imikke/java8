@@ -7,14 +7,14 @@ import java.util.List;
 
 import org.junit.Test;
 
-public class StreamExTest {
+public class ListExTest {
 
 	@Test
 	public void test() {
 		List<Integer> list1 = new ArrayList<>();
 		list1.add(1);
 		list1.add(2);
-		List<String> list2 = StreamEx.map(list1, (i) -> {
+		List<String> list2 = ListEx.map(list1, (i) -> {
 			return i.toString();
 		});
 		List<String> expected = new ArrayList<>();
