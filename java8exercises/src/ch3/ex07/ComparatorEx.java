@@ -63,21 +63,21 @@ public class ComparatorEx {
 						"Those options are not allowed.");
 			}
 
-			String str1_tmp = str1;
-			String str2_tmp = str2;
+			String str1Tmp = str1;
+			String str2Tmp = str2;
 			for (ComparatorOption option : options) {
 				// 空白確認
 				if (option == ComparatorOption.IGNORE_SPACE) {
-					str1_tmp = str1.replaceAll(" ", "");
-					str2_tmp = str2.replaceAll(" ", "");
+					str1Tmp = str1.replaceAll(" ", "");
+					str2Tmp = str2.replaceAll(" ", "");
 				}
 				// 大文字小文字確認、比較
 				if (option == ComparatorOption.CASE_INSENSITIVE) {
-					ret = str1_tmp.compareToIgnoreCase(str2_tmp);
+					ret = str1Tmp.compareToIgnoreCase(str2Tmp);
 					break;
 				} else {
 					// ORDER, CASE_SENSITIVE, UNIGNORE_SPACE
-					ret = str1_tmp.compareTo(str2_tmp);
+					ret = str1Tmp.compareTo(str2Tmp);
 				}
 			}
 
