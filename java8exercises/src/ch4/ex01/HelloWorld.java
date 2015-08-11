@@ -17,7 +17,10 @@ public class HelloWorld extends Application {
 		message.setFont(new Font(100));
 		text.setFont(new Font(100));
 		text.setText(initMsg);
-		text.textProperty().bindBidirectional(message.textProperty());
+		text.textProperty().addListener(
+				property -> message.setText(text.getText()));
+		// バインディングを使った方法
+		// text.textProperty().bindBidirectional(message.textProperty());
 		VBox root = new VBox();
 		root.getChildren().addAll(message, text);
 		stage.setScene(new Scene(root));
