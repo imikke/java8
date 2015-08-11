@@ -25,7 +25,7 @@ public class Member extends Application {
 		nameProperty = new SimpleStringProperty("");
 	};
 
-	private String country = "JPN";
+	private String country = "JPN"; // デフォルト値
 	private StringProperty countryProperty = null;
 	private Runnable countryRunner = () -> {
 		System.out.println("create country property object");
