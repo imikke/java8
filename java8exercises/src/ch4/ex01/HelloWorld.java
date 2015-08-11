@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 public class HelloWorld extends Application {
 	@Override
-	public void start(Stage stage) {
+	public void start(Stage stage) throws Exception {
 		String initMsg = "Hello, JavaFX!";
 		Label message = new Label(initMsg);
 		TextField text = new TextField();
