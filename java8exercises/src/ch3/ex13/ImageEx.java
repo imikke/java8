@@ -88,7 +88,7 @@ class LatentImage {
 							m = x;
 						if (n < 0 || n > in.getHeight() - 1)
 							n = y;
-						sum[0] += in.getPixelReader().getColor(m, n).getGreen();
+						sum[0] += in.getPixelReader().getColor(m, n).getRed();
 						sum[1] += in.getPixelReader().getColor(m, n).getGreen();
 						sum[2] += in.getPixelReader().getColor(m, n).getBlue();
 					}
@@ -102,6 +102,7 @@ class LatentImage {
 
 	/**
 	 * detctEdgeメソッドは、画像のエッジ検出処理を行う。
+	 * 入力画像にはグレースケールの画像が必要とされる。
 	 * 
 	 * @return
 	 */
@@ -111,17 +112,25 @@ class LatentImage {
 				for (int i = -1; i <= 1; i++) {
 					for (int j = -1; j <= 1; j++) {
 						if ((i == -1 && j == -1) || (i == -1 && j == 1)
-								|| (i == 1 && j == -1) || (i == 1 && j == 1))
-							break;
-						int m = x + i;
-						int n = y + j;
-						if (m < 0 || m > in.getWidth() - 1)
-							m = x;
-						if (n < 0 || n > in.getHeight() - 1)
-							n = y;
-						sum[0] += in.getPixelReader().getColor(m, n).getGreen();
-						sum[1] += in.getPixelReader().getColor(m, n).getGreen();
-						sum[2] += in.getPixelReader().getColor(m, n).getBlue();
+								|| (i == 0 && j == 0) || (i == 1 && j == -1)
+								|| (i == 1 && j == 1)) {
+							// nothing to do
+						} else {
+
+							int m = x + i;
+							int n = y + j;
+							if (m < 0 || m > in.getWidth() - 1)
+								m = x;
+							if (n < 0 || n > in.getHeight() - 1)
+								n = y;
+							sum[0] += in.getPixelReader().getColor(m, n)
+									.getRed();
+							sum[1] += in.getPixelReader().getColor(m, n)
+									.getGreen();
+							sum[2] += in.getPixelReader().getColor(m, n)
+									.getBlue();
+
+						}
 					}
 				}
 				// System.out.println("x:" + x + ",y:" + y + ",r:" + (int)
@@ -131,11 +140,12 @@ class LatentImage {
 				sum[0] = 4 * c.getRed() - sum[0];
 				sum[1] = 4 * c.getGreen() - sum[1];
 				sum[2] = 4 * c.getBlue() - sum[2];
+
 				for (int i = 0; i < sum.length; i++) {
 					if (sum[i] > 1.0)
 						sum[i] = 1.0;
 					else if (sum[i] < 0.0) {
-						sum[i] = 0;
+						sum[i] = 0.0;
 					}
 				}
 				return Color.color(sum[0], sum[1], sum[2]);
