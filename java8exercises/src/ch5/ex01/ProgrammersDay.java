@@ -9,12 +9,13 @@ public class ProgrammersDay {
 	 * 
 	 * @param year
 	 * @return LocalDateを返す。
-	 * @exception 指定した年が負の場合
-	 *                、IllegalArgumentExceptionを返す。
+	 * @exception IllegalArgumentException
+	 *                指定した年が負の場合
 	 */
 	public static LocalDate get(int year) {
 		if (year < 0) {
-			throw new IllegalArgumentException("year is bigger than 1.");
+			throw new IllegalArgumentException(
+					"`year` argument is bigger than 1.");
 		}
 		// plus()を用いて計算する
 		return LocalDate.of(year, 1, 1).plus(Period.ofDays(255));

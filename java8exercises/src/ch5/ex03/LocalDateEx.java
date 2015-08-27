@@ -12,8 +12,8 @@ public class LocalDateEx {
 	 * 
 	 * @param date
 	 * @return
-	 * @exception dateがnullの場合
-	 *                、NullPointerExceptionを返す。
+	 * @exception NullPointerException
+	 *                dateがnullの場合
 	 */
 	public static TemporalAdjuster next(Predicate<LocalDate> date) {
 		Objects.requireNonNull(date, "`date` argument must be non-null.");
