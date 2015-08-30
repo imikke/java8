@@ -23,7 +23,6 @@ public class Friday13th {
 		LocalDate tmp = start.withDayOfMonth(13);
 		List<LocalDate> days = new ArrayList<>();
 		while (tmp.isBefore(end)) {
-			// System.out.println(tmp.toString());
 			if (tmp.getDayOfWeek() == DayOfWeek.FRIDAY) {
 				days.add(tmp);
 			}
