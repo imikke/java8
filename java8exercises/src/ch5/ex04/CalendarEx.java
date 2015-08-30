@@ -26,12 +26,12 @@ public class CalendarEx {
 		// + lastDay.getDayOfMonth());
 		Integer[] days = new Integer[37]; // 31+6
 		int count = 1;
-		// TODO month april etc
+
 		System.out.printf("%2d/%4d%n", month, year);
-		System.out.printf(" Sun Mon Tue Wed Thu Fri Sat%n");
+		System.out.printf(" Mon Tue Wed Thu Fri Sat Sun%n");
 		for (int i = 0; i < days.length; i++) {
 			days[i] = 0;
-			if (i >= firstDayOfWeek.getValue() % 7
+			if (i >= (firstDayOfWeek.getValue() - 1)
 					&& count <= lastDay.getDayOfMonth()) {
 				days[i] = count;
 				count++;
