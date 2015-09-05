@@ -16,8 +16,7 @@ public class FlightTime {
 			int flightHours, int flightMinutes) {
 		Objects.requireNonNull(departureTime,
 				"`departureTime` argument must be non-null.");
-		Objects.requireNonNull(departureTime,
-				"`ZoneId` argument must be non-null.");
+		Objects.requireNonNull(dest, "`dest` argument must be non-null.");
 		if (flightHours < 0 || flightMinutes < 0) {
 			throw new IllegalArgumentException(
 					"flightHours and flightMinutes arguments are biggger than 1.");
