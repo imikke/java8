@@ -15,6 +15,18 @@ public class FlightTime {
 	private long differentHours = MAX_NUMBER;
 	private long flightTime = MAX_NUMBER; // hours
 
+	/**
+	 * コンストラクタ
+	 * 
+	 * @param departureTime
+	 * @param dest
+	 * @param flightHours
+	 * @param flightMinutes
+	 * @exception NullPointerException
+	 *                引数departureTime、destのいずれかがnullの場合
+	 * @exception IllegalArgumentException
+	 *                引数flightHours、flightMinutesのいずれかが0以下の場合
+	 */
 	public FlightTime(ZonedDateTime departureTime, ZoneId dest,
 			int flightHours, int flightMinutes) {
 		Objects.requireNonNull(departureTime,
@@ -32,6 +44,15 @@ public class FlightTime {
 		setDifferentHours();
 	}
 
+	/**
+	 * コンストラクタ
+	 * 
+	 * @param departureTime
+	 * @param dest
+	 * @param arrivalTimeOfDest
+	 * @exception NullPointerException
+	 *                引数departureTime、dest、arrivalTimeのいずれかがnullの場合
+	 */
 	public FlightTime(ZonedDateTime departureTime, ZoneId dest,
 			LocalTime arrivalTimeOfDest) {
 		Objects.requireNonNull(departureTime,
