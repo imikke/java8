@@ -20,6 +20,7 @@ public class ConcurrentFileReader {
 	public static void main(String[] args) throws IOException,
 			InterruptedException {
 		ExecutorService pool = Executors.newCachedThreadPool();
+		long threshold = 1;
 
 		File files[] = new File[2];
 		files[0] = new File("test/words.txt");
@@ -52,6 +53,7 @@ public class ConcurrentFileReader {
 		}
 		pool.shutdown();
 		pool.awaitTermination(10, TimeUnit.SECONDS);
-		map.forEach(1, (k, v) -> System.out.print(k + " -> " + v + ", "));
+		map.forEach(threshold,
+				(k, v) -> System.out.print(k + " -> " + v + ", "));
 	}
 }

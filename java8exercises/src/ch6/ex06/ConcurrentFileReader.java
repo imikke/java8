@@ -24,6 +24,7 @@ public class ConcurrentFileReader {
 		File files[] = new File[2];
 		files[0] = new File("test/words.txt");
 		files[1] = new File("test/words2.txt");
+		long threshold = 1;
 
 		for (int t = 0; t < ntasks; t++) {
 			pool.submit(() -> {
@@ -52,6 +53,7 @@ public class ConcurrentFileReader {
 		}
 		pool.shutdown();
 		pool.awaitTermination(10, TimeUnit.SECONDS);
-		map.forEach(1, (k, v) -> System.out.print(k + " -> " + v + ", "));
+		map.forEach(threshold,
+				(k, v) -> System.out.print(k + " -> " + v + ", "));
 	}
 }
