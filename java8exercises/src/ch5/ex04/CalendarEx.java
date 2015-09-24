@@ -17,7 +17,6 @@ public class CalendarEx {
 		if (month < 1 || month > 12 || year < 0) {
 			throw new IllegalArgumentException("arguments are invalid.");
 		}
-		// TODO argument check
 		DayOfWeek firstDayOfWeek = LocalDate.of(year, month, 1).getDayOfWeek();
 		LocalDate lastDay = LocalDate.of(year, month, 1).with(
 				TemporalAdjusters.lastDayOfMonth());
