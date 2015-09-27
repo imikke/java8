@@ -1,3 +1,5 @@
+//インタラクティブな取り組みは間違ったときに最初に戻るのが大変
+
 var path = java.nio.file.Paths
 var file = java.nio.file.Files
 var bytes = file.readAllBytes(path.get('../../../test/words2.txt'))

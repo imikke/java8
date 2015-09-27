@@ -1,6 +1,4 @@
-/*
- * main関数やprint文が不要なので、簡単なテストプログラムを書く際にはJavaより簡単。
- */
+//main関数やprint文が不要なので、簡単なテストプログラムを書く際にはJavaより簡単。
 var ZDT = java.time.ZonedDateTime
 var ztime = ZDT.now()
 ztime
