@@ -6,8 +6,8 @@ var bytes = file.readAllBytes(path.get('../../../test/words2.txt'))
 var contents = new java.lang.String(bytes, java.nio.charset.StandardCharsets.UTF_8)
 //contents
 var StringArray = Java.type('java.lang.String[]')
-var arrays = Java.to(contents.split(new RegExp("[\\W+]")), StringArray)
-var words = java.util.Arrays.asList(arrays)
+var array = Java.to(contents.split(new RegExp("[\\W+]")), StringArray)
+var words = java.util.Arrays.asList(array)
 //words
 
 //重複を無くす

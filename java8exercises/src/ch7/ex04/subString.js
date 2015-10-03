@@ -1,4 +1,4 @@
-//$ jjs < sub_string.js 
+//$ jjs < subString.js 
 //jjs> jjs> jjs> jjs> jjs> jjs> jjs> jjs> lo
 //jjs> jjs> class java.lang.String
 //jjs> class java.lang.Class
