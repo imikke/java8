@@ -1,3 +1,5 @@
+// 記法に慣れればJavaで開発する場合と難易度は変わらないと思う。
+// ただ、IDEで自動補完やリファクタリングの機能が使えない点は不便に思う。
 // data fromat :
 // String1, double1
 // String2, double2
