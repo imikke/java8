@@ -40,8 +40,10 @@ public class ConcurrentFileReader {
 						set.add(files[i]);
 						words.parallel().forEach(w -> {
 							map.merge(w, set, (f1, f2) -> {
-								f1.addAll(f2);
-								return f1;
+								Set<File> mergedSet = new HashSet<File>();
+								mergedSet.addAll(f1);
+								mergedSet.addAll(f2);
+								return mergedSet;
 							});
 						});
 					} catch (Exception e) {
@@ -54,6 +56,6 @@ public class ConcurrentFileReader {
 		pool.shutdown();
 		pool.awaitTermination(10, TimeUnit.SECONDS);
 		map.forEach(threshold,
-				(k, v) -> System.out.print(k + " -> " + v + ", "));
+				(k, v) -> System.out.println(k + " -> " + v + ", "));
 	}
 }

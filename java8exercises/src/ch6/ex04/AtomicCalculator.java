@@ -15,7 +15,8 @@ public class AtomicCalculator {
 			/ 2);
 
 	public static LongAccumulator maxValue = new LongAccumulator(Math::max, 0);
-	public static LongAccumulator minValue = new LongAccumulator(Math::min, 0);
+	public static LongAccumulator minValue = new LongAccumulator(Math::min,
+			ntasks * iterations - 1);
 
 	public static void main(String[] args) throws InterruptedException {
 		ExecutorService pool = Executors.newCachedThreadPool();

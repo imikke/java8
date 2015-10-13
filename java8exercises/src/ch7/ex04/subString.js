@@ -1,14 +1,8 @@
 //$ jjs < subString.js 
-//jjs> jjs> jjs> jjs> jjs> jjs> jjs> jjs> lo
-//jjs> jjs> class java.lang.String
-//jjs> class java.lang.Class
-//jjs> jjs> java.lang.ClassCastException: Cannot cast java.lang.Class to java.lang.String
-//getClass()で取得したクラスはClass<String>なので、Stringクラスへはcastできない
+//特に何も起きない。古いバージョンのjava8だけ起こるらしい。
 
 var sub = 'Hello'.slice(-2)
-sub
+print(sub)
 var c = sub.getClass()
-c
-c.getClass()
-
-java.lang.String.class.cast(c)
+print(c)
+java.lang.String.class.cast(sub)

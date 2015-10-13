@@ -54,6 +54,6 @@ public class ConcurrentFileReader {
 		pool.shutdown();
 		pool.awaitTermination(10, TimeUnit.SECONDS);
 		map.forEach(threshold,
-				(k, v) -> System.out.print(k + " -> " + v + ", "));
+				(k, v) -> System.out.println(k + " -> " + v + ", "));
 	}
 }
