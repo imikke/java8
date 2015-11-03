@@ -8,7 +8,7 @@ import java.util.Objects;
 public class FilesEx {
 
 	/**
-	 * backwordWriteメソッドは、byte配列を逆順に書き出す。
+	 * backwordWriteメソッドは、読み込んだ文字（byte配列）を逆順に書き出す。
 	 * 
 	 * @param path
 	 * @param bytes
